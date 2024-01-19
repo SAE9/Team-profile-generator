@@ -50,6 +50,64 @@ const managerQuestions = [
       }
 ];
 
+const engineerQuestions = [
+    {
+        type: 'input',
+        name: 'name',
+        message: "What is your engineer's name?",
+        
+      
+      },
+      {
+        type: 'input',
+        name: 'id',
+        message: "What is your engineer's ID?",
+        
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: "What is your engineer's email?",
+        
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: "What is your engineer's Github Username?",
+       
+      }
+];
+
+
+const internQuestions = [
+    {
+        type: 'input',
+        name: 'name',
+        message: "What is your intern's name?",
+        
+      
+      },
+      {
+        type: 'input',
+        name: 'id',
+        message: "What is your intern's ID?",
+        
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: "What is your intern's email?",
+        
+      },
+      {
+        type: 'input',
+        name: 'school',
+        message: "What is your intern's school name?",
+       
+      }
+];
+
+
 // // * Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.   
 // * Write code in `index.js` that uses inquirer to gather information about the development team members and creates objects for each team member using the correct classes as blueprints.
 // * When a user starts the application then they are prompted to enter the **team manager**’s:
