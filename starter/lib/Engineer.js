@@ -4,17 +4,18 @@ const Employee = require('./Employee');
 
 //Create subclass Engineer to inherit from Employee class
 class Engineer extends Employee {
+    // Constructor function to initialize the employee's name, id, and email
     constructor (name, id, email, github) {
         super (name,id,email);
         this.github = github;
 
     }
-
+// call back function to retrive github username
     getGithub () {
         return this.github;
     }
 
-
+// call back function to retrive role
     getRole () {
         return 'Engineer';
     }
@@ -23,5 +24,5 @@ class Engineer extends Employee {
 
 }
 
-
+// Export the Employee class so that it can be used in other files
 module.exports = Engineer;

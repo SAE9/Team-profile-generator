@@ -110,7 +110,7 @@ const internQuestions = [
 ];
 
 // Menu options to continue
-const menuOptions [
+const menuOptions = [
     {
         type: 'list',
         name: 'choice',
