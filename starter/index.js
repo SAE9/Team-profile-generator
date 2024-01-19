@@ -16,8 +16,8 @@ const { error } = require("console");
 
 // Initalise package.json file 
 // Create Employee,Engineer,Intern,Manager classes so that it'll pass the test
-
 // Create inquirer prompt to ask for Manager information
+
 //Create the inquirer flow so that it will ask different set of inquirer prompt based on user input
 //write html result file 
 
@@ -49,15 +49,7 @@ const managerQuestions = [
        
       }
 ];
-// Menu options to continue
-const menuOptions [
-    {
-        type: 'list',
-        name: 'options',
-        message: 'Choose an option',
-        choices:['Add an engineer', 'Add an Intern','Finish building the team'],
-      },
-];
+
 
 // prompt questions for engineer
 const engineerQuestions = [
@@ -117,6 +109,74 @@ const internQuestions = [
       }
 ];
 
+// Menu options to continue
+const menuOptions [
+    {
+        type: 'list',
+        name: 'choice',
+        message: 'Choose an option',
+        choices:['Add an engineer', 'Add an intern', 'Finish building the team'],
+      }
+];
+
+// Function to prompt for manager details
+function promptManager() {
+    inquirer.prompt(managerQuestions).then((answers) => {
+      // Create a manager object using the provided details
+      const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+  
+      // Call the function to display the menu options
+      promptMenu();
+    });
+  }
+  
+  // Function to prompt for engineer details
+  function promptEngineer() {
+    inquirer.prompt(engineerQuestions).then((answers) => {
+      // Create an engineer object using the provided details
+      const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+  
+      // Call the function to display the menu options
+      promptMenu();
+    });
+  }
+  
+  // Function to prompt for intern details
+  function promptIntern() {
+    inquirer.prompt(internQuestions).then((answers) => {
+      // Create an intern object using the provided details
+      const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+  
+      // Call the function to display the menu options
+      promptMenu();
+    });
+  }
+  
+  // Function to prompt the user with the menu options
+  function promptMenu() {
+    inquirer.prompt(menuOptions).then((answers) => {
+      // Handle the user's choice
+      switch (answers.options) {
+        case 'Add an engineer':
+          promptEngineer();
+          break;
+        case 'Add an intern':
+          promptIntern();
+          break;
+        case 'Finish building the team':
+          // Call a function to generate the HTML and exit the application
+          generateHTML();
+          break;
+        default:
+          console.log('Invalid choice');
+          break;
+      }
+    });
+  }
+  
+  // Call the promptManager function to start the application
+  promptManager();
+
 
 
 // // * Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.   
@@ -143,12 +203,3 @@ const internQuestions = [
 
 
 
-const people = [];
-fs.readFile('address.csv', 'utf-8', (err, data) => {
-    const parsedData = data.split('\n')
-    .map((line)) => line 
-}
-
-
-
-)
