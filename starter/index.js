@@ -21,7 +21,7 @@ const { error } = require("console");
 //Create the inquirer flow so that it will ask different set of inquirer prompt based on user input
 //write html result file 
 
-//prompt questions for team manager's information
+//prompt questions for team manager
 const managerQuestions = [
     {
         type: 'input',
@@ -49,7 +49,17 @@ const managerQuestions = [
        
       }
 ];
+// Menu options to continue
+const menuOptions [
+    {
+        type: 'list',
+        name: 'options',
+        message: 'Choose an option',
+        choices:['Add an engineer', 'Add an Intern','Finish building the team'],
+      },
+];
 
+// prompt questions for engineer
 const engineerQuestions = [
     {
         type: 'input',
@@ -78,7 +88,7 @@ const engineerQuestions = [
       }
 ];
 
-
+// prompt questions for intern
 const internQuestions = [
     {
         type: 'input',
@@ -106,6 +116,7 @@ const internQuestions = [
        
       }
 ];
+
 
 
 // // * Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.   
