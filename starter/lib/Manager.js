@@ -9,15 +9,15 @@ class Manager extends Employee {
         this.officeNumber = officeNumber;
 
         }
-
+// call back function to retrieve office number
         getOfficeNumber () {
             return this.officeNumber;
         }
-
+// call back function to retrieve role
         getRole () {
             return 'Manager';
         }
     
 }
-
+// Export the Employee class so that it can be used in other files
 module.exports = Manager;

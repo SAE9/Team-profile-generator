@@ -20,7 +20,7 @@
     getEmail() {
         return this.email;
     }
-// call back function to retrieve employee
+// call back function to retrieve employee role
     getRole () {
         return 'Employee';
     
