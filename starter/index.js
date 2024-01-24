@@ -10,6 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 const { error } = require("console");
+const teamMembers = [];
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
@@ -156,7 +157,7 @@ function promptManager() {
   function promptMenu() {
     inquirer.prompt(menuOptions).then((answers) => {
       // Handle the user's choice
-      switch (answers.options) {
+      switch (answers.choice) {
         case 'Add an engineer':
           promptEngineer();
           break;
@@ -173,6 +174,15 @@ function promptManager() {
       }
     });
   }
+
+  // Function to generate HTML 
+function generateHTML() {
+ 
+  const html = render(teamMembers);
+ // function to write the HTML
+  fs.writeFileSync(outputPath, html);
+  console.log('HTML generated and saved to team.html');
+}
   
   // Call the promptManager function to start the application
   promptManager();
@@ -200,6 +210,11 @@ function promptManager() {
 //   * ID
 //   * Email
 //   * School
-
+// When a user decides to finish building their team then they exit the application, and the HTML is generated.
+// Call the render function (provided for you) and pass in an array containing all employee objects;
+// The render function will generate and return a block of HTML including templated divs for each employee!
+// Create an HTML file using the HTML returned from the render function.
+// Write it to a file named team.html in the output folder.
+// You can use the provided variable outputPath to target this location.
 
 

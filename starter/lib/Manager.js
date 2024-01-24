@@ -4,6 +4,7 @@ const Employee = require ('./Employee');
 
 //subclass manager is created to inherit employee class
 class Manager extends Employee {
+    // Constructor function to initialize the employee's name, id, and email
     constructor(name, id, email, officeNumber) {
         super (name, id ,email);
         this.officeNumber = officeNumber;
