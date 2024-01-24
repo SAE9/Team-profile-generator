@@ -13,7 +13,7 @@
         return this.name;
     }
 // call back function to  retrieve id
-    getID () {
+    getId () {
         return this.id;
     }
 // call back function to retrieve email
