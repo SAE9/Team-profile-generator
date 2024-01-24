@@ -176,14 +176,17 @@ function promptManager() {
   }
 
   // Function to generate HTML 
-function generateHTML() {
+  function generateHTML() {
+    try {
+       const html = render(teamMembers);
+       // function to write the HTML
+       fs.writeFileSync(outputPath, html);
+       console.log('HTML generated and saved to team.html');
+    } catch (error) {
+       console.error('Error generating HTML:', error.message);
+    }
+ }
  
-  const html = render(teamMembers);
- // function to write the HTML
-  fs.writeFileSync(outputPath, html);
-  console.log('HTML generated and saved to team.html');
-}
-  
   // Call the promptManager function to start the application
   promptManager();
 
