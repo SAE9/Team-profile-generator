@@ -46,5 +46,5 @@ License under MIT
 
 Ensure have downloaded jest package 
 
-* To check tests working, type npm test.
+* To check tests, type npm test in the terminal of the directory.
 ![see here](assets/test.png)
