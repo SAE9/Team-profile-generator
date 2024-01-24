@@ -10,7 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 const { error } = require("console");
-const teamMembers = [];
+const employees = [];
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
@@ -125,6 +125,7 @@ function promptManager() {
     inquirer.prompt(managerQuestions).then((answers) => {
       // Create a manager object using the provided details
       const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+      employees.push(manager);
   
       // Call the function to display the menu options
       promptMenu();
@@ -136,6 +137,7 @@ function promptManager() {
     inquirer.prompt(engineerQuestions).then((answers) => {
       // Create an engineer object using the provided details
       const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+      employees.push(engineer);
   
       // Call the function to display the menu options
       promptMenu();
@@ -147,6 +149,7 @@ function promptManager() {
     inquirer.prompt(internQuestions).then((answers) => {
       // Create an intern object using the provided details
       const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+      employees.push(intern);
   
       // Call the function to display the menu options
       promptMenu();
@@ -175,10 +178,13 @@ function promptManager() {
     });
   }
 
+  
+
   // Function to generate HTML 
   function generateHTML() {
     try {
-       const html = render(teamMembers);
+       const html = render(employees);
+       
        // function to write the HTML
        fs.writeFileSync(outputPath, html);
        console.log('HTML generated and saved to team.html');
