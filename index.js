@@ -13,15 +13,6 @@ const { error } = require("console");
 const employees = [];
 
 
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
-
-// Initalise package.json file 
-// Create Employee,Engineer,Intern,Manager classes so that it'll pass the test
-// Create inquirer prompt to ask for Manager information
-
-//Create the inquirer flow so that it will ask different set of inquirer prompt based on user input
-//write html result file 
-
 //prompt questions for team manager
 const managerQuestions = [
     {
